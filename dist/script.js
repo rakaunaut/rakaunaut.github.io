@@ -2,9 +2,17 @@
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 6,
+    slidesPerView: 2,
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
     autoplay: {
-      delay: 1000,
+      delay: 2000,
      },
   
     // Navigation arrows
