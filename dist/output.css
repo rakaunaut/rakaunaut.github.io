@@ -868,6 +868,10 @@ video {
   --tw-gradient-to: #fde047;
 }
 
+.bg-fixed {
+  background-attachment: fixed;
+}
+
 .bg-clip-text {
   -webkit-background-clip: text;
           background-clip: text;
