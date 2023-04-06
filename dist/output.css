@@ -586,6 +586,11 @@ video {
   z-index: 50;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .-mt-2 {
   margin-top: -0.5rem;
 }
@@ -636,6 +641,10 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.ml-0 {
+  margin-left: 0px;
 }
 
 .flex {
@@ -1090,6 +1099,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:w-2\/5 {
+    width: 40%;
+  }
+
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -1109,8 +1122,49 @@ video {
     height: 40%;
   }
 
+  .lg\:h-4\/5 {
+    height: 80%;
+  }
+
+  .lg\:h-screen {
+    height: 100vh;
+  }
+
+  .lg\:h-3\/5 {
+    height: 60%;
+  }
+
+  .lg\:w-2\/5 {
+    width: 40%;
+  }
+
+  .lg\:w-5\/12 {
+    width: 41.666667%;
+  }
+
+  .lg\:w-6\/12 {
+    width: 50%;
+  }
+
+  .lg\:w-7\/12 {
+    width: 58.333333%;
+  }
+
+  .lg\:w-3\/5 {
+    width: 60%;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:place-self-end {
+    place-self: end;
+  }
+
+  .lg\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
