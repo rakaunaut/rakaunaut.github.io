@@ -4,14 +4,14 @@
     loop: true,
     slidesPerView: 6,
     autoplay: {
-      delay: 2000,
+      delay: 1000,
      },
   
     // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
   });
 
 
