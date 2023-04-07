@@ -1,12 +1,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+html, body {
+  overflow-x: clip;
+}
 .pyro-bg {
     background: url("./img/header-bg-dark.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -0.1em;
     max-width: 100vw;
-    overflow-x: clip;
+
 }
 
 .bg-fixed {
@@ -260,23 +263,33 @@ background-image: radial-gradient(circle, rgba(255,247,190,1) 0%, #ffe200 48%, r
   z-index: 0;
 }
 
-/* .bg-fixed {
-  background-attachment: unset;
-  background-size: cover;
-  background-position: center;
-}
 
 .cloud {
   display:none;
-} */
+} 
 
-.pyro-bg {
-  background-attachment:scroll;
-  background-size: auto 101vh;
-  background-position: right 50% top -0.1em;
-}
 
 .footer-bg {
   height: 14em;
 }
+
+.pyro-bg {
+background:none;
+position: relative;
+z-index: 1;
+}
+
+.pyro-bg-mobile {
+  background-image: url("./img/header-bg-dark.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 }
