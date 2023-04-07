@@ -2,7 +2,9 @@
 
 html, body {
   overflow-x: clip;
+  background: rgb(23 23 23);
 }
+
 .pyro-bg {
     background: url("./img/header-bg-dark.webp");
     background-repeat: no-repeat;
