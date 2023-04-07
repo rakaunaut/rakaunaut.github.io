@@ -269,4 +269,13 @@ background-image: radial-gradient(circle, rgba(255,247,190,1) 0%, #ffe200 48%, r
 .cloud {
   display:none;
 } */
+
+.pyro-bg {
+  background: url("./img/header-bg.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto 101vh;
+  background-position: right 50% top -0.1em;
+  overflow-x: clip;
+}
 }
