@@ -586,11 +586,6 @@ video {
   z-index: 50;
 }
 
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
 .-mt-2 {
   margin-top: -0.5rem;
 }
@@ -619,8 +614,8 @@ video {
   margin-bottom: 2rem;
 }
 
-.ml-8 {
-  margin-left: 2rem;
+.ml-0 {
+  margin-left: 0px;
 }
 
 .mr-4 {
@@ -641,10 +636,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-0 {
-  margin-left: 0px;
 }
 
 .flex {
@@ -681,14 +672,6 @@ video {
 
 .w-2\/12 {
   width: 16.666667%;
-}
-
-.w-2\/5 {
-  width: 40%;
-}
-
-.w-5\/12 {
-  width: 41.666667%;
 }
 
 .w-6 {
@@ -741,6 +724,10 @@ video {
   cursor: pointer;
 }
 
+.resize {
+  resize: both;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -751,10 +738,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-end {
@@ -1100,10 +1083,6 @@ video {
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-slate-300\/20:hover {
-  background-color: rgb(203 213 225 / 0.2);
-}
-
 .hover\:bg-slate-300\/10:hover {
   background-color: rgb(203 213 225 / 0.1);
 }
@@ -1124,10 +1103,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:w-2\/5 {
-    width: 40%;
-  }
-
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -1143,10 +1118,6 @@ video {
     margin-left: 4rem;
   }
 
-  .lg\:h-2\/5 {
-    height: 40%;
-  }
-
   .lg\:h-4\/5 {
     height: 80%;
   }
@@ -1155,28 +1126,16 @@ video {
     height: 100vh;
   }
 
-  .lg\:h-3\/5 {
-    height: 60%;
-  }
-
-  .lg\:w-2\/5 {
-    width: 40%;
+  .lg\:w-3\/5 {
+    width: 60%;
   }
 
   .lg\:w-5\/12 {
     width: 41.666667%;
   }
 
-  .lg\:w-6\/12 {
-    width: 50%;
-  }
-
   .lg\:w-7\/12 {
     width: 58.333333%;
-  }
-
-  .lg\:w-3\/5 {
-    width: 60%;
   }
 
   .lg\:w-9\/12 {
@@ -1202,27 +1161,11 @@ video {
     margin-left: 8rem;
   }
 
-  .xl\:h-4\/5 {
-    height: 80%;
-  }
-
   .xl\:h-screen {
     height: 100vh;
   }
 
-  .xl\:w-3\/5 {
-    width: 60%;
-  }
-
-  .xl\:flex-row {
-    flex-direction: row;
-  }
-
   .xl\:gap-0 {
     gap: 0px;
-  }
-
-  .xl\:place-self-end {
-    place-self: end;
   }
 }

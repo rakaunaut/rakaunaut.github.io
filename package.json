@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "atropos": "^1.0.2",
-    "flickity": "^3.0.0"
+    "flickity": "^3.0.0",
+    "particles.js": "^2.0.0"
   }
 }

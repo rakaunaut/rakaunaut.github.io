@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 .pyro-bg {
-    background: url("./img/header-bg.webp");
+    background: url("./img/header-bg-dark.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -0.1em;
@@ -18,11 +18,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: 2em;
-    opacity:0.8;
-    height: 28em;
+    opacity:0.6;
+    height: 20em;
     min-width: 100%;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 
@@ -271,11 +271,12 @@ background-image: radial-gradient(circle, rgba(255,247,190,1) 0%, #ffe200 48%, r
 } */
 
 .pyro-bg {
-  background: url("./img/header-bg.webp");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment:scroll;
   background-size: auto 101vh;
   background-position: right 50% top -0.1em;
-  overflow-x: clip;
+}
+
+.footer-bg {
+  height: 14em;
 }
 }
