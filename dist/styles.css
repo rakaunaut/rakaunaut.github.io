@@ -3,7 +3,7 @@
 html,
 body {
   overflow-x: clip;
-  /* background: rgb(23 23 23); */
+  background: rgb(23 23 23);
 }
 
 .pyro-bg {
@@ -277,6 +277,7 @@ body {
 }
 
 
+
 @media only screen and (max-width: 1023px) {
   .sticky-1 {
     position: relative;
@@ -313,7 +314,7 @@ body {
     position: relative;
   }
 
-  .pyro-bg-mobile {
+  /* .pyro-bg-mobile {
     background-image: url("./img/header-bg-dark.webp");
     background-position: center;
     background-repeat: no-repeat;
@@ -336,6 +337,10 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
+  } */
+
+  html,body {
+    background: none;
   }
 
   html::before {
