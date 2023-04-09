@@ -300,10 +300,6 @@ body {
     z-index: 0;
   }
 
-  /* .cloud {
-    display: none;
-  } */
-
   .footer-bg {
     height: 14em;
     z-index:2;
@@ -313,31 +309,6 @@ body {
     background: none;
     position: relative;
   }
-
-  /* .pyro-bg-mobile {
-    background-image: url("./img/header-bg-dark.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-  .pyro-bg-mobile-roadmap {
-    background-image: url("./img/header-bg-dark.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  } */
 
   html,body {
     background: none;
