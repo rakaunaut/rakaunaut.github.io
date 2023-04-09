@@ -39,7 +39,8 @@
       </button>
     </div>
     <ul class="mt-8 flex flex-col space-y-2 justify-center">
-      <li class="menu-btn-bg p-2  font-bold text-lg cursor-pointer transition-all duration-600">
+      <li
+        class="menu-btn-bg  p-2  font-bold text-lg cursor-pointer transition-all duration-600">
         <a href="./index.html" class="flex justify-center items-center h-full w-full">START</a>
       </li>
       <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
@@ -48,8 +49,7 @@
       <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
         <a href="./roadmap.html" class="flex justify-center items-center h-full w-full">ROADMAP</a>
       </li>
-      <li
-        class="menu-btn-bg menu-btn-active  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <li class="menu-btn-bg menu-btn-active p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
 
         <a href="./team.html" class="flex justify-center items-center h-full w-full">TEAM</a>
       </li>
@@ -84,29 +84,19 @@
   <!-- MAIN -->
 
   <main>
-    <section class="relative h-auto">
 
-      <div class="cloud">
-        <img src="./img/cloud1.png" class="cloud1" alt="" style="--i:1">
-        <img src="./img/cloud2.png" class="cloud1" alt="" style="--i:2">
-        <img src="./img/cloud3.png" class="cloud1" alt="" style="--i:3">
-        <img src="./img/cloud4.png" class="cloud1" alt="" style="--i:4">
-        <img src="./img/cloud5.png" class="cloud1" alt="" style="--i:5">
-        <img src="./img/cloud1.png" class="cloud2" alt="" style="--i:1">
-        <img src="./img/cloud2.png" class="cloud2" alt="" style="--i:2">
-        <img src="./img/cloud3.png" class="cloud2" alt="" style="--i:3">
-        <img src="./img/cloud4.png" class="cloud2" alt="" style="--i:4">
-        <img src="./img/cloud5.png" class="cloud2" alt="" style="--i:5">
-      </div>
-      <!-- <div class="pyro-bg-mobile"></div> -->
-      <div class="pyro-bg px-5 bg-fixed flex-col min-h-screen pb-32">
-        <div class="container mx-auto pt-20">
-        <h1
-        class="text-5xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-tr from-orange-500 to-yellow-300 drop-shadow-xl mb-12">
-        team</h1>
-      </div>
-        <div
-          class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center pt-20 px-5 lg:px-0 gap-8 font-bold h-auto">
+    <section class="pyro-bg bg-fixed">
+      
+      <!-- main content -->
+      <div class="flex justify-center px-5 md:px-0 text-2xl gap-12 flex-wrap">
+        <div class="container flex flex-col z-10">
+
+          <h1
+          class="text-5xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-tr from-orange-500 to-yellow-300 drop-shadow-xl pt-20 mb-12">
+          Team</h1>
+
+          <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center pt-20 px-5 lg:px-0 gap-8 font-bold h-auto">
              
        
           <div class="flex flex-col text-white justify-around z-10 ml-8 lg:ml-0 mb-14">
@@ -223,11 +213,32 @@
        
           
         </div>
+
+          
+        </div>
+
+      
       </div>
-      <div class="black-gradient"></div>
-
-
+      <div class="black-gradient-roadmap"></div>
+        <!-- cloud animation -->
+        <div class="cloud-sticky">
+          <div class="cloud z-0">
+            <img src="./img/cloud1.png" class="cloud1" alt="" style="--i:1">
+            <img src="./img/cloud2.png" class="cloud1" alt="" style="--i:2">
+            <img src="./img/cloud3.png" class="cloud1" alt="" style="--i:3">
+            <img src="./img/cloud4.png" class="cloud1" alt="" style="--i:4">
+            <img src="./img/cloud5.png" class="cloud1" alt="" style="--i:5">
+            <img src="./img/cloud1.png" class="cloud2" alt="" style="--i:1">
+            <img src="./img/cloud2.png" class="cloud2" alt="" style="--i:2">
+            <img src="./img/cloud3.png" class="cloud2" alt="" style="--i:3">
+            <img src="./img/cloud4.png" class="cloud2" alt="" style="--i:4">
+            <img src="./img/cloud5.png" class="cloud2" alt="" style="--i:5">
+          </div>
+ 
+        </div>
+      
     </section>
+
 
 
      <!-- NFT SLIDESHOW -->
