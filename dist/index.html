@@ -66,7 +66,7 @@
   </nav>
 
   <!--HEADER-->
-  <header x-data="{ showBar: false}" class="fixed flex justify-between transition duration-200 w-full py-4 z-20"
+  <header x-data="{ showBar: false}" class="fixed flex justify-between items-center transition duration-200 w-full py-4 z-20"
     :class="{'bg-gray-800/50 backdrop-blur-lg shadow-xl':showBar === true}"
     @scroll.window="showBar = (window.pageYOffset > 150) ? true : false">
     <button class="px-2 text-gray-300 transition duration-200 hover:text-white focus:outline-none"
@@ -77,7 +77,7 @@
           clip-rule="evenodd" />
       </svg>
     </button>
-    <img src="img/pyros-world-sm.png" class="h-8" x-show="showBar" />
+    <img src="img/pyros-world-sm.png" class="h-5 lg:h-8" x-show="showBar" />
     <button class="px-2 text-gray-700 bg-yellow-400 mr-4">Connect Wallet</button>
   </header>
 
@@ -98,7 +98,7 @@
         <img src="./img/cloud4.png" class="cloud2" alt="" style="--i:4">
         <img src="./img/cloud5.png" class="cloud2" alt="" style="--i:5">
       </div>
-      <div class="pyro-bg-mobile"></div>
+      <!-- <div class="pyro-bg-mobile"></div> -->
       <div class="flex flex-col lg:flex-row justify-center pt-20 px-5 lg:px-0 font-bold h-auto lg:h-screen pyro-bg">
         <div class="content-wrap"></div>
         <div class="flex flex-col justify-around gap-24 xl:gap-0">
