@@ -339,6 +339,10 @@ body {
     top: 0;
     align-self: auto;
   }
+
+  .pyro-hidden {
+    display:none;
+  }
   
 }
 
