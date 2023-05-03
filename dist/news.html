@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="output.css" rel="stylesheet">
+
+  <script src="atropos.min.js"></script>
+
+  <link href="styles.css" rel="stylesheet">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{ isOpen: false}" @keydown.escape.window="isOpen = false">
+
+
+  <!-- Sidebar -->
+  <nav class="fixed sidebar transform transition duration-300 inset-0 z-30 w-screen bg-gray-900/75 backdrop-blur-lg text-gray-50 h-screen py-4"
+  :class="{'-translate-x-full opacity-0':isOpen === false, 'translate-x-0 opacity-100':isOpen === true}"
+  x-trap.noscroll="isOpen">
+    <div class="flex justify-end mr-6">
+      <button class="p-2 rounded hover:bg-blue-800" @click="isOpen = false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+    </div>
+    <ul class="mt-8 flex flex-col space-y-2 justify-center">
+      <li
+        class="menu-btn-bg p-2  font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./index.html" class="flex justify-center items-center h-full w-full">START</a>
+      </li>
+      <li class="menu-btn-bg menu-btn-active p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./news.html" class="flex justify-center items-center h-full w-full">NEWS</a>
+      </li>
+      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./roadmap.html" class="flex justify-center items-center h-full w-full">ROADMAP</a>
+      </li>
+      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+
+        <a href="./team.html" class="flex justify-center items-center h-full w-full">TEAM</a>
+      </li>
+
+      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./collection.html" class="flex justify-center items-center h-full w-full">COLLECTION</a>
+      </li>
+      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./my-collection.html" class="flex justify-center items-center h-full w-full">MY COLLECTION</a>
+      </li>
+      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./faq.html" class="flex justify-center items-center h-full w-full">FAQ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--HEADER-->
+  <header x-data="{ showBar: false}" class="fixed flex justify-between items-center transition duration-200 w-full py-4 px-5 z-20"
+    :class="{'bg-gray-800/50 backdrop-blur-lg shadow-xl':showBar === true}"
+    @scroll.window="showBar = (window.pageYOffset > 150) ? true : false">
+    <button class="px-2 hamburger text-gray-300 transition duration-200 hover:text-white focus:outline-none"
+      @click="isOpen = true">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+    <img src="img/pyros-world-sm.png" class="h-5 lg:h-8 invisible" :class="{'visible':showBar === true, 'invisible':showBar === false}"/>
+
+    <nav class="hidden lg:flex">
+      <ul class="flex gap-3 justify-center">
+        <li
+          class="menu-btn-bg  px-2 py-1 font-bold text-lg cursor-pointer transition-all duration-600">
+          <a href="./index.html" class="flex justify-center items-center h-full w-full">START</a>
+        </li>
+        <li class="menu-btn-bg menu-btn-active px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+          <a href="./news.html" class="flex justify-center items-center h-full w-full">NEWS</a>
+        </li>
+        <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+          <a href="./roadmap.html" class="flex justify-center items-center h-full w-full">ROADMAP</a>
+        </li>
+        <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+  
+          <a href="./team.html" class="flex justify-center items-center h-full w-full">TEAM</a>
+        </li>
+        <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+          <a href="./collection.html" class="flex justify-center items-center h-full w-full">COLLECTION</a>
+        </li>
+        <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+          <a href="./my-collection.html" class="flex justify-center items-center h-full w-full">MY COLLECTION</a>
+        </li>
+        <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+          <a href="./faq.html" class="flex justify-center items-center h-full w-full">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="p-3 rounded-lg text-gray-900 bg-gradient-to-tr from-orange-500 to-yellow-300 hover:from-orange-400 hover:to-yellow-300 transition">Connect Wallet</button>
+  </header>
+  <!-- MAIN -->
+
+  <main>
+    <section class="relative h-auto xl:h-screen overflow-x-clip">
+      <div class="cloud">
+        <img src="./img/cloud1.png" class="cloud1" alt="" style="--i:1">
+        <img src="./img/cloud2.png" class="cloud1" alt="" style="--i:2">
+        <img src="./img/cloud3.png" class="cloud1" alt="" style="--i:3">
+        <img src="./img/cloud4.png" class="cloud1" alt="" style="--i:4">
+        <img src="./img/cloud5.png" class="cloud1" alt="" style="--i:5">
+        <img src="./img/cloud1.png" class="cloud2" alt="" style="--i:1">
+        <img src="./img/cloud2.png" class="cloud2" alt="" style="--i:2">
+        <img src="./img/cloud3.png" class="cloud2" alt="" style="--i:3">
+        <img src="./img/cloud4.png" class="cloud2" alt="" style="--i:4">
+        <img src="./img/cloud5.png" class="cloud2" alt="" style="--i:5">
+      </div>
+     
+      <div class="flex flex-col lg:flex-row justify-center pt-20 px-5 lg:px-0 font-bold h-auto lg:h-screen pyro-bg">
+  
+        <div class="flex flex-col w-full lg:w-5/12">
+          <h1
+            class="text-5xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-tr from-orange-500 to-yellow-300 drop-shadow-xl mt-12 mb-12">
+            news</h1>
+
+              <div class="bg-gray-900/75 backdrop-blur-lg w-96 h-fit p-5 rounded-lg">
+                <a class="twitter-timeline" data-height="500" data-theme="dark" data-chrome="transparent noheader nofooter noborders" href="https://twitter.com/ociswap?ref_src=twsrc%5Etfw">Tweets by ociswap</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+        
+
+        </div>
+        <video autoplay loop muted playsinline  class="w-5/12">
+          <source src="img/gifs/slide-pyro-02.webm" type="video/webm">
+          <source src="img/gifs/slide-pyro-02.mp4"  type='video/mp4; codecs="hvc1"'>
+      </video>
+          <div class="black-gradient"></div>
+         
+      </div>
+  
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="flex flex-col justify-end items-center bg-neutral-900 pt-12">
+    <div id="particles-js"></div>
+    <div class="container flex flex-col items-center justify-center text-white font-light mb-8">
+
+      <div class="flex justify-center gap-5 mb-8">
+        <a href="" target="_blank"><i class="bi bi-telegram text-slate-200 hover:text-red-600 transition"
+            style="font-size: 30px;"></i></a>
+        <a href="" target="_blank"><i class="bi bi-twitter text-slate-200 hover:text-red-600 transition"
+            style="font-size: 30px;"></i></a>
+        <a href="" target="_blank"><i class="bi bi-reddit text-slate-200 hover:text-red-600 transition"
+            style="font-size: 30px;"></i></a>
+        <a href="" target="_blank"><i class="bi bi-youtube text-slate-200 hover:text-red-600 transition"
+            style="font-size: 30px;"></i></a>
+      </div>
+
+      <p class="text-sm mb-2 uppercase font-bold linear-wipe">enlighted by</p>
+      <a class="radix-logo" href="https://www.radixdlt.com" target="blank" rel="nofollow"><svg
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 24" fill="white">
+          <g clip-path="url(#clip0)">
+            <path class="text-white"
+              d="M22.1055 9.76465H28.455C30.2448 9.76465 31.6495 10.2884 32.5652 11.175C33.3476 11.9957 33.7704 13.0898 33.7415 14.2183V14.2576C33.7415 16.577 32.3368 17.9667 30.3638 18.5316L34.2097 23.8737H31.2379L27.7375 18.9562H24.6052V23.8737H22.1055V9.76465ZM28.2718 16.7603C30.0617 16.7603 31.2021 15.825 31.2021 14.4016V14.3604C31.2021 12.8491 30.1032 12.0223 28.251 12.0223H24.6052V16.7603H28.2718Z">
+            </path>
+            <path class="text-white"
+              d="M43.8758 9.66699H46.1962L52.4626 23.8827H49.8194L48.375 20.4765H41.6385L40.1733 23.8827H37.6094L43.8758 9.66699ZM47.4631 18.2712L45.0086 12.6261L42.5542 18.275L47.4631 18.2712Z">
+            </path>
+            <path class="text-white"
+              d="M56.5391 9.76465H61.8501C66.3267 9.76465 69.4193 12.8079 69.4193 16.7808V16.8201C69.4193 20.7912 66.3267 23.8756 61.8501 23.8756H56.5391V9.76465ZM59.0426 12.0223V21.6179H61.8501C64.8408 21.6179 66.7949 19.6221 66.7949 16.8613V16.8201C66.7949 14.0593 64.8408 12.0223 61.8501 12.0223H59.0426Z">
+            </path>
+            <path class="text-white" d="M76.3004 9.76465H73.7969V23.8756H76.3004V9.76465Z"></path>
+            <path class="text-white"
+              d="M93.8152 9.76465L88.8515 16.6593L94.0191 23.8756H91.0681L87.3052 18.4942L83.5593 23.8756H80.6914L85.8401 16.6985L80.8953 9.76465H83.8444L87.3864 14.8842L90.9472 9.76465H93.8152Z">
+            </path>
+            <path class="text-white"
+              d="M10.4277 20.9064C10.2033 20.9063 9.9822 20.8534 9.7826 20.7519C9.583 20.6504 9.41063 20.5033 9.27973 20.3228L3.6628 12.6146H0V9.80883H4.38781C4.61203 9.80855 4.83308 9.86117 5.0327 9.96233C5.23232 10.0635 5.40475 10.2103 5.53574 10.3906L10.1256 16.6866L17.1283 0.839849C17.2386 0.589991 17.42 0.377437 17.6504 0.228254C17.8808 0.0790713 18.1502 -0.000255949 18.4254 6.20404e-07H27.1878V2.80573H19.3524L11.7266 20.0647C11.6261 20.2923 11.4663 20.4894 11.2636 20.6356C11.0609 20.7819 10.8226 20.8721 10.573 20.8971C10.5227 20.8998 10.4723 20.8998 10.422 20.8971">
+            </path>
+          </g>
+        </svg></a>
+
+      <p class="text-sm mt-8">2023 Pyros World</p>
+
+    </div>
+
+    <div class="relative footer-bg">
+      <div class="invisible lg:visible cloud2">
+        <img src="./img/cloud1.png" class="cloud3" alt="" style="--i:1">
+        <img src="./img/cloud2.png" class="cloud3" alt="" style="--i:2">
+        <img src="./img/cloud5.png" class="cloud3" alt="" style="--i:5">
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+  <script src="script-particles.js"></script>
+</body>
+
+</html>

@@ -6,18 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="output.css" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="atropos.css" />
   <script src="atropos.min.js"></script>
 
   <link href="styles.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-
-  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
@@ -25,64 +16,89 @@
 
 <body x-data="{ isOpen: false}" @keydown.escape.window="isOpen = false">
 
+<!-- Sidebar -->
+<nav class="fixed sidebar transform transition duration-300 inset-0 z-30 w-screen bg-gray-900/75 backdrop-blur-lg text-gray-50 h-screen py-4"
+:class="{'-translate-x-full opacity-0':isOpen === false, 'translate-x-0 opacity-100':isOpen === true}"
+x-trap.noscroll="isOpen">
+  <div class="flex justify-end mr-6">
+    <button class="p-2 rounded hover:bg-blue-800" @click="isOpen = false">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  </div>
+  <ul class="mt-8 flex flex-col space-y-2 justify-center">
+    <li
+      class="menu-btn-bg  p-2  font-bold text-lg cursor-pointer transition-all duration-600">
+      <a href="./index.html" class="flex justify-center items-center h-full w-full">START</a>
+    </li>
+    <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <a href="./news.html" class="flex justify-center items-center h-full w-full">NEWS</a>
+    </li>
+    <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <a href="./roadmap.html" class="flex justify-center items-center h-full w-full">ROADMAP</a>
+    </li>
+    <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
 
-    <!-- Sidebar -->
-    <nav
-    class="fixed transform transition duration-300 inset-0 z-30 w-screen bg-gray-900/80 backdrop-blur-lg text-gray-50 h-screen py-4"
-    :class="{'-translate-x-full opacity-0':isOpen === false, 'translate-x-0 opacity-100': isOpen === true}"
-    x-trap.noscroll="isOpen">
-    <div class="flex justify-end mr-6">
-      <button class="p-2 rounded hover:bg-blue-800" @click="isOpen = false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-    </div>
-    <ul class="mt-8 flex flex-col space-y-2 justify-center">
+      <a href="./team.html" class="flex justify-center items-center h-full w-full">TEAM</a>
+    </li>
+
+    <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <a href="./collection.html" class="flex justify-center items-center h-full w-full">COLLECTION</a>
+    </li>
+    <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <a href="./my-collection.html" class="flex justify-center items-center h-full w-full">MY COLLECTION</a>
+    </li>
+    <li class="menu-btn-bg menu-btn-active p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <a href="./faq.html" class="flex justify-center items-center h-full w-full">FAQ</a>
+    </li>
+  </ul>
+</nav>
+
+<!--HEADER-->
+<header x-data="{ showBar: false}" class="fixed flex justify-between items-center transition duration-200 w-full py-4 px-5 z-20"
+  :class="{'bg-gray-800/50 backdrop-blur-lg shadow-xl':showBar === true}"
+  @scroll.window="showBar = (window.pageYOffset > 150) ? true : false">
+  <button class="px-2 hamburger text-gray-300 transition duration-200 hover:text-white focus:outline-none"
+    @click="isOpen = true">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd"
+        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
+  <img src="img/pyros-world-sm.png" class="h-5 lg:h-8 invisible" :class="{'visible':showBar === true, 'invisible':showBar === false}"/>
+
+  <nav class="hidden lg:flex">
+    <ul class="flex gap-3 justify-center">
       <li
-        class="menu-btn-bg  p-2  font-bold text-lg cursor-pointer transition-all duration-600">
+        class="menu-btn-bg  px-2 py-1 font-bold text-lg cursor-pointer transition-all duration-600">
         <a href="./index.html" class="flex justify-center items-center h-full w-full">START</a>
       </li>
-      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
-        <a href="./about.html" class="flex justify-center items-center h-full w-full">ABOUT</a>
+      <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./news.html" class="flex justify-center items-center h-full w-full">NEWS</a>
       </li>
-      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
         <a href="./roadmap.html" class="flex justify-center items-center h-full w-full">ROADMAP</a>
       </li>
-      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
 
         <a href="./team.html" class="flex justify-center items-center h-full w-full">TEAM</a>
       </li>
-      <li class="menu-btn-bg menu-btn-active p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
-        <a href="./faq.html" class="flex justify-center items-center h-full w-full">FAQ</a>
-      </li>
-      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
         <a href="./collection.html" class="flex justify-center items-center h-full w-full">COLLECTION</a>
       </li>
-      <li class="menu-btn-bg  p-2 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+      <li class="menu-btn-bg  px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
         <a href="./my-collection.html" class="flex justify-center items-center h-full w-full">MY COLLECTION</a>
+      </li>
+      <li class="menu-btn-bg menu-btn-active px-2 py-1 text-center font-bold text-lg cursor-pointer transition-all duration-600">
+        <a href="./faq.html" class="flex justify-center items-center h-full w-full">FAQ</a>
       </li>
     </ul>
   </nav>
 
-
-
-  <!--HEADER-->
-  <header x-data="{ showBar: false}" class="fixed flex justify-between items-center transition duration-200 w-full py-4 z-20"
-    :class="{'bg-gray-800/50 backdrop-blur-lg shadow-xl':showBar === true}"
-    @scroll.window="showBar = (window.pageYOffset > 150) ? true : false">
-    <button class="px-2 text-gray-300 transition duration-200 hover:text-white focus:outline-none"
-      @click="isOpen = true">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd"
-          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-          clip-rule="evenodd" />
-      </svg>
-    </button>
-    <img src="img/pyros-world-sm.png" class="h-5 lg:h-8" x-show="showBar" />
-    <button class="px-2 text-gray-700 bg-yellow-400 mr-4">Connect Wallet</button>
-  </header>
-
+  <button class="p-3 rounded-lg text-gray-900 bg-gradient-to-tr from-orange-500 to-yellow-300 hover:from-orange-400 hover:to-yellow-300 transition">Connect Wallet</button>
+</header>
   <!-- MAIN -->
 
   <main>
@@ -305,205 +321,6 @@
         
         
     </section>
-
-
-    <!-- NFT SLIDESHOW -->
-
-    <section class="flex justify-center bg-neutral-900 overflow-x-hidden px-5">
-
-
-
-      <div class="swiper mt-16 mb-16">
-
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro01">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro02">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro03">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro04">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro05">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro06">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro07">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro08">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro09">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-slide">
-
-            <div class="atropos my-atropos pyro10">
-              <!-- scale container (required) -->
-              <div class="atropos-scale">
-                <!-- rotate container (required) -->
-                <div class="atropos-rotate">
-                  <!-- inner container (required) -->
-                  <div class="atropos-inner">
-                    <!-- put your custom content here -->
-                    <img src="img/slider-bg-01.png" class="slider-card-bg" data-atropos-offset="0" />
-                    <img src="img/pyro-02.png" class="slider-img" data-atropos-offset="5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <!-- If we need navigation buttons 
-   <div class="swiper-button-prev"></div>
-   <div class="swiper-button-next"></div> -->
-      </div>
-
-    </section>
   </main>
 
   <!-- FOOTER -->
@@ -559,7 +376,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-  <script src="script.js"></script>
+  <script src="script-particles.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,135 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+html,
+body {
+  overflow-x: clip;
+  background: rgb(23 23 23);
+}
+
+.soon-bg {
+  background: url("./img/coming-soon-bg-big.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100vw;
+  height: auto;
+}
+
+.cloud-soon .cloud1-soon {
+  animation: cloud calc(60s * var(--i)) linear infinite;
+  opacity: 0.1;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  z-index: 0;
+}
+
+.cloud-soon2 .cloud3-soon {
+  animation: cloud calc(60s * var(--i)) linear infinite;
+  opacity: 1;
+  width: 75%;
+  position: absolute;
+  bottom: 20%;
+  height: auto;
+  z-index: 0;
+}
+
+.cloud-soon .cloud2-soon {
+  animation: cloud2 calc(30s * var(--i)) linear;
+  animation-fill-mode: forwards;
+  opacity: 0.1;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  z-index: 0;
+}
+
+
+@keyframes cloud {
+  0% {
+    transform: translateX(+100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes cloud2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.black-gradient {
+  background: linear-gradient(
+    to top,
+    rgba(23, 23, 23, 1) 0%,
+    rgba(23, 23, 23, 0) 100%
+  );
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 10em;
+  z-index: 1;
+}
+
+
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+
+@media only screen and (max-width: 1023px) {
+
+
+
+  .soon-bg {
+    background: none;
+    position: relative;
+  }
+
+  .cloud-soon2 .cloud3-soon {
+    animation: cloud calc(30s * var(--i)) linear infinite;
+    opacity: 1;
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    height: auto;
+    z-index: 99;
+  }
+
+  html,body {
+    background: none;
+  }
+
+  html::before {
+    content: ' ';
+    display: block;
+    background-image: url("./img/coming-soon-bg-big.jpg");
+    background-position: -10rem;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -10;
+  }
+
+}
